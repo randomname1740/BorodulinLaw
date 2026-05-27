@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/x-icon" href="Borodulin_icon.ico"/>
 <title>Borodulin Ion — Law Firm</title>
-<meta name="description" content="Cabinet de avocatură în Orhei, Moldova - consultații și servicii juridice profesionale. Contactați-ne pentru ajutor legal.
+      <meta name="description" content="Cabinet de avocatură în Orhei, Moldova - consultații și servicii juridice profesionale. Contactați-ne pentru ajutor legal.
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
       
     <style>
@@ -96,16 +96,17 @@
         }
         
 
-        .nav-links a {
+                .nav-links a {
           color: var(--muted);
           text-decoration: none;
-          font-size: 1.25rem;
-          letter-spacing: 0.14em;
+          font-size: 0.95rem;        /* reduced from 1.25rem */
+          letter-spacing: 0.10em;
           text-transform: uppercase;
           transition: color 0.25s;
           position: relative;
           padding-bottom: 2px;
-        }
+                }
+        
         .nav-links a::after {
           content: '';
           position: absolute;
@@ -167,13 +168,51 @@
            .mobile-menu a:hover { color: var(--gold); }
         /* HERO */
         .hero {
-          min-height: 92vh;
-          display: flex;
-          align-items: center;
-          padding: 80px 5% 60px;
-          position: relative;
-          overflow: hidden;
-        }
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 5% 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 620px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero-image img {
+  width: 520px;
+  height: 520px;
+  object-fit: cover;
+  object-position: top;
+  border: 1.5px solid var(--gold);
+  filter: grayscale(20%);
+}
+
+/* Hide image on mobile */
+@media (max-width: 900px) {
+  .hero-image { display: none; }
+  .hero-inner { flex-direction: column; }
+}
+        
         .hero-bg {
           position: absolute; inset: 0;
           background:
@@ -187,11 +226,7 @@
             linear-gradient(90deg, rgba(184,154,90,0.04) 1px, transparent 1px);
           background-size: 60px 60px;
         }
-        .hero-content {
-          position: relative;
-          max-width: 680px;
-          animation: fadeUp 1s ease both;
-        }
+        
         .hero-eyebrow {
           font-size: 0.72rem;
           letter-spacing: 0.25em;
@@ -750,8 +785,9 @@
     <a href="#contact" class="btn-primary" style="text-align:center">Consultare Gratuita</a>
     </div>
      <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-lines"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-inner">                          <!-- NEW wrapper -->
     <div class="hero-content">
       <div class="hero-eyebrow">Ion Borodulin</div>
       <h1><em>Justiția</em> se clădește pe <em>lege</em>, dar se menține prin <em>curajul</em> celor care o apară</h1>
@@ -761,7 +797,11 @@
         <a href="#practices" class="btn-secondary">Servicii</a>
       </div>
     </div>
-  </section>
+    <div class="hero-image">                        <!-- NEW image block -->
+      <img src="Borodulin_profile.jpg" alt="Ion Borodulin"/>
+    </div>
+  </div>
+</section>
    <section class="practices" id="practices">
     <div class="section-header fade-in">
       <span class="section-tag"></span>
